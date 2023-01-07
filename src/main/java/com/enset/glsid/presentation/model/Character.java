@@ -1,4 +1,4 @@
-package com.enset.glsid.model;
+package com.enset.glsid.presentation.model;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;

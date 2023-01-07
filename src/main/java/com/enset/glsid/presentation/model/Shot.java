@@ -1,6 +1,5 @@
-package com.enset.glsid.model;
+package com.enset.glsid.presentation.model;
 
-import com.enset.glsid.Main;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -14,7 +13,7 @@ public class Shot  extends Character{
   boolean toRemove;
 
     public Shot(GraphicsContext gc,int posX, int posY, int size, int imgNumber) {
-        super(gc, posX, posY, size, 10, new Image("file:src/main/resources/shot"+imgNumber+".png"));
+        super(gc, posX, posY, size, 10, new Image("file:src/main/resources/images/shot"+imgNumber+".png"));
     }
 
   public void update() {

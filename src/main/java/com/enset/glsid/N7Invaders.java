@@ -1,9 +1,9 @@
 package com.enset.glsid;
 
-import com.enset.glsid.model.Alien;
-import com.enset.glsid.model.Rocket;
-import com.enset.glsid.model.Shot;
-import com.enset.glsid.model.Universe;
+import com.enset.glsid.presentation.model.Alien;
+import com.enset.glsid.presentation.model.Rocket;
+import com.enset.glsid.presentation.model.Shot;
+import com.enset.glsid.presentation.model.Universe;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,10 +29,10 @@ public class N7Invaders extends Application {
   public static final int HEIGHT = 600;
   private static final int PLAYER_SIZE = 60;
   static final int PLAYER_IMG_INDEX = 1;
-  private static final int ALIENS_IMG_SIZE = 10;
+  private static final int ALIENS_IMG_SIZE = 1;
 
 
-  final int MAX_ALIENS = 20,  MAX_SHOTS = MAX_ALIENS * 2;
+  final int MAX_ALIENS = 5,  MAX_SHOTS = MAX_ALIENS * 2;
   boolean gameOver = false;
   private GraphicsContext gc;
 
@@ -133,11 +133,10 @@ public class N7Invaders extends Application {
     player.draw();
 
     aliens.stream().peek(Alien::update).peek(Alien::draw).forEach(e -> {
-      if(player.colide(e) && !player.isExploding()) {
+      if(player.colide(e) && player.isExploding()) {
         player.explode();
       }
     });
-
 
     for (int i = shots.size() - 1; i >=0 ; i--) {
       Shot shot = shots.get(i);
@@ -148,7 +147,7 @@ public class N7Invaders extends Application {
       shot.update();
       shot.draw(score);
       for (Alien alien : aliens) {
-        if(shot.colide(alien) && !alien.isExploding()) {
+        if(shot.colide(alien) && alien.isExploding()) {
           score++;
           alien.explode();
           shot.setToRemove(true);

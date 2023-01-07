@@ -1,10 +1,10 @@
-package com.enset.glsid.model;
+package com.enset.glsid.presentation.model;
 
 import javafx.scene.image.Image;
 
 public interface Explodable {
 
-  Image EXPLOSION_IMG = new Image("file:src/main/resources/explosion.png");
+  Image EXPLOSION_IMG = new Image("file:src/main/resources/images/explosion.png");
   int EXPLOSION_W = 128;
   int EXPLOSION_ROWS = 3;
   int EXPLOSION_COL = 3;

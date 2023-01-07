@@ -1,4 +1,4 @@
-package com.enset.glsid.model;
+package com.enset.glsid.presentation.model;
 
 import com.enset.glsid.N7Invaders;
 import javafx.scene.canvas.GraphicsContext;
@@ -6,13 +6,17 @@ import javafx.scene.image.Image;
 
 
 public class Alien extends Character implements Explodable{
-    private static final String IMAGE_PATH = "file:src/main/resources/alien";
+    private static final String IMAGE_PATH = "file:src/main/resources/images/alien";
     private static final String IMAGE_EXT = ".png";
 
     boolean exploding, destroyed;
     int explosionStep;
     public Alien(GraphicsContext gc, int posX, int posY, int size, int score, int imgNumber) {
         super(gc,posX, posY, size, (score/5)+2, new Image(IMAGE_PATH+imgNumber+IMAGE_EXT));
+        resetState();
+    }
+
+    private void resetState() {
         exploding = false;
         destroyed = false;
         explosionStep =0;
@@ -20,17 +24,27 @@ public class Alien extends Character implements Explodable{
 
 
     public void update() {
+        System.out.println(this+" "+posX+","+posY);
         //super.update();
-        if(!exploding && !destroyed) posY += speed;
-        if(posY > N7Invaders.HEIGHT) destroyed = true;
-        // posX should be changed so that the alien moves to the rocket
+        if(!exploding && !destroyed) {
+            posY += speed;
+            if(posY > N7Invaders.HEIGHT) {
+                destroyed = true;
+            }
+           // make it move left and right but in a smooth way
+
+
+        }
+      if(posY > N7Invaders.HEIGHT) destroyed = true;
+
+
 
     }
 
 
     @Override
     public boolean isExploding() {
-        return exploding;
+        return !exploding;
     }
 
     @Override
@@ -52,6 +66,21 @@ public class Alien extends Character implements Explodable{
     public void explode() {
         exploding = true;
         explosionStep = -1;
+
+        // after the explosion is done,wait 2s the alien should reset its position to the top of the screen in a random X position and call resetState()
+        // to reset its state
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            resetState();
+            posX = (int) (Math.random() * (N7Invaders.WIDTH - size));
+            posY = 0;
+        }).start();
+
+
     }
 
     public void draw() {

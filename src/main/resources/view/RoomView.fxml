@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.enset.glsid.presentation.controller.RoomController"
+            prefHeight="400.0" prefWidth="600.0">
+<!-- This is a 3 step verification page, the first step contains 2 buttons ( Create Room, Join Room )
+if( Create Room ) then
+    step 2: enter the numbers of coins and the number of rounds
+    step 3: generate a Room ID, show it to the player and wait for the other players to join
+
+else ( Join Room )
+    step 2: enter the room id
+    step 3: enter the room
+-->
+    <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/rocket1.png" />
+    </ImageView>
+        <Label layoutX="27.0" layoutY="31.0" text="Room">
+            <font>
+                <Font name="Georgia" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="27.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Create Room">
+            <font>
+                <Font name="Showcard Gothic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="27.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Join Room">
+            <font>
+                <Font name="Showcard Gothic" size="18.0" />
+            </font>
+        </Button>
+
+
+</AnchorPane>

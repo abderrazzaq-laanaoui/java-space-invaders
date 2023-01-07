@@ -1,4 +1,4 @@
-package com.enset.glsid.model;
+package com.enset.glsid.presentation.model;
 
 import static com.enset.glsid.N7Invaders.WIDTH;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.enset.glsid.model;
+package com.enset.glsid.presentation.model;
 
 import com.enset.glsid.N7Invaders;
 import javafx.scene.canvas.GraphicsContext;
@@ -13,7 +13,7 @@ public class Rocket extends Character implements Explodable {
   private GraphicsContext gc;
 
   public Rocket( GraphicsContext gc,int posX, int posY, int size, int imgNumber) {
-    super(gc, posX, posY, size, 0, new Image("file:src/main/resources/rocket"+imgNumber+".png"));
+    super(gc, posX, posY, size, 0, new Image("file:src/main/resources/images/rocket"+imgNumber+".png"));
     this.exploding = false;
     this.destroyed = false;
     this.gc = gc;
@@ -40,7 +40,7 @@ public class Rocket extends Character implements Explodable {
 
   @Override
   public boolean isExploding() {
-    return this.exploding;
+    return !this.exploding;
   }
 
   @Override
