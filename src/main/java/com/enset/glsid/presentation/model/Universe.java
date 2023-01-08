@@ -12,8 +12,6 @@ public class Universe extends Character {
   public Universe(GraphicsContext gc,int posX, int posY, int size, int speed) {
         super(gc, posX, posY, size, speed, null);
     }
-
-
   private int h, w, r, g, b;
   private double opacity;
 

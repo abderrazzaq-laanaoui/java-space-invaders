@@ -11,9 +11,9 @@
     <!-- Create a home screen with an image in the right in the top of it the top score and in the left a welcome user then 4 buttons aligned verticaly-->
 
     <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../images/rocket1.png" />
+        <Image url="@../images/hero.png" />
     </ImageView>
-    <Label layoutX="480.0" layoutY="23.0" text="Top Score : 0">
+    <Label layoutX="480.0" layoutY="23.0" text="Top Score : 82">
       <font>
          <Font name="Georgia" size="14.0" />
       </font></Label>
@@ -21,20 +21,21 @@
       <font>
          <Font name="Georgia" size="14.0" />
       </font></Label>
-    <Button layoutX="27.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Play">
+    <Button  onAction="#onPlayBtnClicked" layoutX="27.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Play">
       <font>
          <Font name="Showcard Gothic" size="18.0" />
       </font></Button>
-    <Button layoutX="27.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Score">
+    <Button onAction="#on1vs1BtnClicked" layoutX="27.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="1VS1">
       <font>
          <Font name="Showcard Gothic" size="18.0" />
       </font></Button>
-    <Button layoutX="27.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Settings">
+    <Button layoutX="27.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Store">
       <font>
          <Font name="Showcard Gothic" size="18.0" />
       </font></Button>
-    <Button layoutX="27.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Exit">
+    <Button onAction="#onExitClicked" layoutX="27.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Exit">
       <font>
          <Font name="Showcard Gothic" size="18.0" />
-      </font></Button>
+      </font>
+    </Button>
 </AnchorPane>

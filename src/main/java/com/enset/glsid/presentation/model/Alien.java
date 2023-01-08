@@ -31,11 +31,11 @@ public class Alien extends Character implements Explodable{
             if(posY > N7Invaders.HEIGHT) {
                 destroyed = true;
             }
-           // make it move left and right but in a smooth way
+            // make it move left and right but in a smooth way
 
 
         }
-      if(posY > N7Invaders.HEIGHT) destroyed = true;
+        if(posY > N7Invaders.HEIGHT) destroyed = true;
 
 
 
@@ -86,8 +86,8 @@ public class Alien extends Character implements Explodable{
     public void draw() {
         if(exploding) {
             getGc().drawImage(EXPLOSION_IMG, explosionStep % EXPLOSION_COL * EXPLOSION_W, (explosionStep / EXPLOSION_ROWS) * EXPLOSION_H + 1,
-                EXPLOSION_W, EXPLOSION_H,
-                posX, posY, size, size);
+                    EXPLOSION_W, EXPLOSION_H,
+                    posX, posY, size, size);
         }
         else {
             getGc().drawImage(img, posX, posY, size, size);

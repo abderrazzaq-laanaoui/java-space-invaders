@@ -15,7 +15,7 @@
             prefHeight="400.0" prefWidth="600.0">
     <!-- create a login page (email, and password) with a button for registration also -->
     <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../images/rocket1.png" />
+        <Image url="@../images/hero.png" />
     </ImageView>
     <Label layoutX="27.0" layoutY="31.0" text="Login">
         <font>
@@ -39,7 +39,13 @@
             <Font name="Showcard Gothic" size="18.0" />
         </font>
     </Button>
-    <Button layoutX="27.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Register">
+    <Button onAction="#onRegistreBtnClicked" layoutX="27.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Register">
+        <font>
+            <Font name="Showcard Gothic" size="18.0" />
+        </font>
+    </Button>
+    <!-- back button -->
+    <Button onAction="#onBackButtonclicked1" layoutX="27.0" layoutY="328.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Back">
         <font>
             <Font name="Showcard Gothic" size="18.0" />
         </font>

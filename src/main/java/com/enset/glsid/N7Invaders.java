@@ -22,17 +22,18 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class N7Invaders extends Application {
+public class N7Invaders {
 
   private static final Random RAND = new Random();
   public static final int WIDTH = 800;
   public static final int HEIGHT = 600;
   private static final int PLAYER_SIZE = 60;
   static final int PLAYER_IMG_INDEX = 1;
-  private static final int ALIENS_IMG_SIZE = 1;
+  private static final int ALIENS_IMG_SIZE = 10;
 
 
   final int MAX_ALIENS = 5,  MAX_SHOTS = MAX_ALIENS * 2;
+  private final Stage stage;
   boolean gameOver = false;
   private GraphicsContext gc;
 
@@ -49,8 +50,8 @@ public class N7Invaders extends Application {
   }
 
 
-  @Override
-  public void start(Stage stage) throws Exception {
+  public N7Invaders(Stage primaryStage) {
+    this.stage = primaryStage;
     Canvas canvas = new Canvas(WIDTH, HEIGHT);
     canvas.setFocusTraversable(true);
     gc = canvas.getGraphicsContext2D();
@@ -59,15 +60,7 @@ public class N7Invaders extends Application {
     timeline.play();
     canvas.setCursor(Cursor.DISAPPEAR);
 
-   /* canvas.setOnMouseMoved(e -> mouseX = e.getX());
-    canvas.setOnMouseClicked(e -> {
-      if(shots.size() < MAX_SHOTS) shots.add(player.shoot());
-      if(gameOver) {
-        gameOver = false;
-        setup();
-      }
-    });
-*/
+
     //replace mouse event by keyboard event, space for shooting, left and right arrows for moving, and escape for pause and resume
     canvas.setOnKeyPressed(e -> {
       switch(e.getCode()) {
@@ -168,13 +161,11 @@ public class N7Invaders extends Application {
 
     univ.removeIf(u -> u.getPosY() > HEIGHT);
 
-}
+  }
   Alien newAlien() {
     return new Alien(gc,50 + RAND.nextInt(WIDTH - 100), 0, PLAYER_SIZE, score,RAND.nextInt(ALIENS_IMG_SIZE)+1);
   }
 
 
-  public static void main(String[] args) {
-    launch();
-  }
+
 }

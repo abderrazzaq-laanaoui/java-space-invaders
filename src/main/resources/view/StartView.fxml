@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.enset.glsid.presentation.controller.AuthController">
+
+    <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/hero.png" />
+    </ImageView>
+    <Label layoutX="27.0" layoutY="31.0" text="Welcome to N7Invaders">
+        <font>
+            <Font name="Georgia" size="14.0" />
+        </font>
+    </Label>
+    <Button fx:id="loginBtnP1" onAction="#onLoginBtnClicked" layoutX="27.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Login">
+        <font>
+            <Font name="Showcard Gothic" size="18.0" />
+        </font>
+    </Button>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="220.0" prefHeight="16.0" prefWidth="149.0" text="Continue as">
+      <font>
+         <Font name="Georgia" size="14.0" />
+      </font>
+   </Label>
+    <Button onAction="#onGuestBtnClicked" layoutX="27.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="150.0" text="Guest" textAlignment="CENTER">
+        <font>
+            <Font name="Showcard Gothic" size="18.0" />
+        </font>
+    </Button>
+
+</AnchorPane>
